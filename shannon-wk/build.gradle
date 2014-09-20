@@ -1,0 +1,58 @@
+apply plugin: 'war'
+apply plugin: 'jetty'
+apply plugin: 'eclipse-wtp'
+apply plugin: 'java'  
+
+sourceCompatibility = 1.7 
+targetCompatibility = 1.7
+
+repositories {
+   mavenCentral()
+}
+
+dependencies {
+    providedCompile 'javax.servlet:servlet-api:2.5'
+    compile 'org.springframework:spring-webmvc:4.0.5.RELEASE'
+	compile 'org.springframework:spring-jdbc:4.0.5.RELEASE'
+	compile 'mysql:mysql-connector-java:5.1.31'
+	compile 'org.springframework.security:spring-security-core:3.2.4.RELEASE'
+	compile 'org.springframework.security:spring-security-config:3.2.4.RELEASE'
+	compile 'org.springframework.security:spring-security-web:3.2.4.RELEASE'
+	compile 'org.springframework.security:spring-security-taglibs:3.2.4.RELEASE'
+	compile 'org.json:json:20090211'
+	compile 'org.codehaus.jackson:jackson-mapper-asl:1.9.12'
+	compile 'jivesoftware:smack:3.1.0'
+	compile 'jivesoftware:smackx:3.1.0'
+	compile 'org.erlang.otp:jinterface:1.5.6'
+	compile group: 'org.apache.logging.log4j', name: 'log4j-api', version: '2.0.1'
+	compile group: 'org.apache.logging.log4j', name: 'log4j-core', version: '2.0.1'
+	
+	compile 'javax.validation:validation-api:1.1.0.Final'
+    compile 'org.hibernate:hibernate-validator:5.0.1.Final'
+    
+    compile 'org.springframework:spring-orm:4.0.5.RELEASE'
+	compile 'javax.security.jacc:javax.security.jacc-api:1.5'
+	compile 'commons-dbcp:commons-dbcp:1.4'
+	compile 'org.slf4j:slf4j-simple:1.6.1'
+	compile 'org.javassist:javassist:3.18.2-GA'
+	compile 'org.hibernate:hibernate-core:4.3.6.Final'
+	compile 'org.codehaus.openxma:dsl-platform:6.0.2'
+	compile 'org.hibernate:hibernate-jpamodelgen:4.3.6.Final'
+	compile 'org.springframework:spring-test:4.1.0.RELEASE'
+	compile 'org.hibernate:hibernate-entitymanager:4.3.6.Final'
+	 compile 'org.eclipse.persistence:javax.persistence:2.1.0'
+	 compile 'org.springframework:spring-aspects:4.0.5.RELEASE'
+	 compile 'org.springframework.data:spring-data-jpa:1.7.0.RELEASE'
+	 
+    
+    testCompile  'junit:junit:4.10'
+    runtime 'javax.servlet:jstl:1.2'
+}
+
+war.from('src/main/resources'){ include('log4j.xml')}
+
+
+
+
+/* Change context path (base url). otherwise defaults to name of project */
+jettyRunWar.contextPath = 'smsApp'

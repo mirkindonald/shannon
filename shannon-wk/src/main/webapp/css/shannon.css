@@ -1,0 +1,33 @@
+body{
+	background-color: #EEF0EF;
+}
+input[type="text"] {
+	height: 20px;
+	font-family: 'Times New Roman', 'Arial', 'sans-serif';
+	border: 1px solid green;
+}
+input[type="text"]:disabled
+{
+	
+	color:#000;
+	background-color:#FFFFFF;
+}
+
+.tableHead{
+	background-color: #B2D8C6;
+
+}
+
+.searchArea{
+	background-color: rgba(102, 163, 102, 0.69);
+	border-radius:8px;
+}
+
+.menuBackgrnd{
+	padding-left:30px;
+	padding-right: 30px;
+	background: -webkit-linear-gradient(rgb(22, 97, 53), rgb(43, 82, 57)); /* For Safari 5.1 to 6.0 */
+ 	background: -o-linear-gradient(rgb(22, 97, 53),rgb(43, 82, 57)); /* For Opera 11.1 to 12.0 */
+  	background: -moz-linear-gradient(rgb(22, 97, 53), rgb(43, 82, 57)); /* For Firefox 3.6 to 15 */
+	background: linear-gradient(rgb(22, 97, 53), rgb(43, 82, 57)); /* Standard syntax */
+}
